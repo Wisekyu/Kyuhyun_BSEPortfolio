@@ -9,7 +9,7 @@ A self-driving robot controlled by a Raspberry Pi 4 on 3 wheels, and propelled b
 
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions: --> 
 
-| **Engineer** | **School** | **Area of Interest** | **Grade** |
+| **Engineer** | **School** | **Area of Interest** | **Grade** | 
 |:--:|:--:|:--:|:--:|
 | Kyuhyun K | Leigh High School | Software Engineering | Incoming Sophomore 
 
@@ -56,8 +56,15 @@ For your first milestone, describe what your project is and how you plan to buil
 - Challenges you're facing and solving in your future milestones 
 - What your plan is to complete your project 
 
-
-
+For my first milestone, I set up all the software parts of the base project, including the Raspberry Pi 4, and got my computer to remote SSH into it.  
+On the mechanical side, I connected one of the ultrasonic sensors through a breadboard, 2 DC motors, and a Pi camera to my Raspberry Pi using the provided dupont wires.  
+I got the motors to turn, print the distance detected by the ultrasonic sensor, and capture pictures through the Pi camera using the 3 programs listed below.  
+My biggest challenge so far was getting the camera to take a photo, because at first I got a Segementation Fault error, which was was extremely unsual to happen in Python, as pointed out by my helpful and patient instructor, Daniel Lin.  
+After many loops of uninstalling and reinstalling extensions, and even reflashing the Pi, I got the camera to take a photo.  
+Daniel also provided me with some code that converts the red parts of the image to white and the rest to black.  
+The code is supposed to help distinguish the red ball from the rest of the environment. 
+I reached this milestone at the end of my 1st week, and next week, I hope to finish the base project.  
+That means I need to finish putting together the robot, and integrating the Pi camera into my program. 
 
 ## Code for testing components 
 
