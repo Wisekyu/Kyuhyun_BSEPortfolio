@@ -44,12 +44,9 @@ For your second milestone, explain what you've worked on since your previous mil
 - What needs to be completed before your final milestone 
 --> 
 
-# First Milestone
+# First Milestone 
 
-<!--**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
---> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cr8z1CbdYV4?si=1Jt48esQK1PJ1jZ9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
 
 For my first milestone, I set up all the software parts of the base project, including the Raspberry Pi 4, and got my computer to remote SSH into it.  
 On the mechanical side, I connected one of the ultrasonic sensors through a breadboard, 2 DC motors, and a Pi camera to my Raspberry Pi using the provided dupont wires.  
