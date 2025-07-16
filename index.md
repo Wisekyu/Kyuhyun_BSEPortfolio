@@ -45,7 +45,7 @@ For your second milestone, explain what you've worked on since your previous mil
 - What needs to be completed before your final milestone
 
 **Schematic for the 3 ultrasonic sensors** 
-![Schematic](schematic.jpg) 
+![Schematic](schematic2.jpg) 
 
 # First Milestone 
 
@@ -128,7 +128,7 @@ print("Frame saved as frame.jpg")
 
 
 ## Schematic 
-![Schematic](schematic.jpg) 
+![Schematic](schematic1.jpg) 
 
 
 
