@@ -44,7 +44,7 @@ For your second milestone, explain what you've worked on since your previous mil
 - Previous challenges you faced that you overcame
 - What needs to be completed before your final milestone
 
-**Schematic for the 3 ultrasonic sensors** 
+## Schematic for the 3 ultrasonic sensors 
 ![Schematic](schematic2.jpg) 
 
 # First Milestone 
