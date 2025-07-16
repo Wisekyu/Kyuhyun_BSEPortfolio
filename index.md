@@ -30,19 +30,22 @@ For your final milestone, explain the outcome of your project. Key details to in
 - What you hope to learn in the future after everything you've learned at BSE
 
 
-
+--> 
 # Second Milestone
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+<!--**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+--> 
 
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight:
+For your second milestone, explain what you've worked on since your previous milestone. You can highlight: 
 - Technical details of what you've accomplished and how they contribute to the final goal
 - What has been surprising about the project so far
 - Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone 
---> 
+- What needs to be completed before your final milestone
+
+**Schematic for the 3 ultrasonic sensors** 
+![Schematic](schematic.jpg) 
 
 # First Milestone 
 
@@ -53,8 +56,8 @@ For your second milestone, explain what you've worked on since your previous mil
 For my first milestone, I set up all the software parts of the base project, including the Raspberry Pi 4, and got my computer to remote SSH into it.  
 On the mechanical side, I connected one of the ultrasonic sensors through a breadboard, 2 DC motors, and a Pi camera to my Raspberry Pi using the provided dupont wires.  
 I got the motors to turn, print the distance detected by the ultrasonic sensor, and capture pictures through the Pi camera using the 3 programs listed below.  
-My biggest challenge so far was getting the camera to take a photo, because at first I got a Segementation Fault error, which was was extremely unsual to happen in Python, as pointed out by my helpful and patient instructor, Daniel Lin.  
-After many loops of uninstalling and reinstalling extensions, and even reflashing the Pi, I got the camera to take a photo.  
+My biggest challenge so far was getting the camera to take a photo, because at first I got a Segmentation Fault error, which was was extremely unsual to happen in Python, as pointed out by my helpful and patient instructor, Daniel Lin.  
+After multiple attempts to uninstall and reinstall extensions, and reflashing thePi, I finally got the camera to take a photo.  
 Daniel also provided me with some code that converts the red parts of the image to white and the rest to black.  
 The code is supposed to help distinguish the red ball from the rest of the environment. 
 I reached this milestone at the end of my 1st week, and next week, I hope to finish the base project.  
