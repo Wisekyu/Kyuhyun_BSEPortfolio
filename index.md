@@ -31,18 +31,162 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 
 --> 
-# Second Milestone
+# Second Milestone 
 
 <!--**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 --> 
 
-For your second milestone, explain what you've worked on since your previous milestone. You can highlight: 
-- Technical details of what you've accomplished and how they contribute to the final goal
-- What has been surprising about the project so far
-- Previous challenges you faced that you overcame
-- What needs to be completed before your final milestone
+For my second milestone, I completed the base project by attaching 2 more ultrasonic sensors in the front, sending a live video feed from my Pi camera to my computer, utilizing a prewritten program to detect the red ball, and using PID controls to 
+Although I was too ambitous and thought I could try coding the program for sphere recognition myself, Daniel recommended me that I use a premade program. 
+I tweaked the code for the live feed to show a dot that marks the center of the ball, an outline around the ball, the offset in a numberical form, and  if the ball is on the left or the right side, or centered from the view of the camera. 
+During class, I learned about PID(Proportional, Integral, Derivative) controls, which use 3 factors to steer the robot towards the direction of the ball. 
+My instructor, Daniel wrote out the pseudocode for the controller, which laid out the foundation for me to write the PID controller in Python. 
+The first iterations of the program did not work very well, as it simply made the robot turn left and right, but I found out that the robot was actually avoiding the red ball instead of facing it. 
+After reversing some of the signs in the inequality and going through some trial and error by trying different values for the PID controller, I got the robot to track the ball at a reasonably fast pace. 
+I also wanted the robot to stop and print out a message saying that the ball is found when it was close enough to the ball, so I used the 3 ultrasonic sensors to measure the distance between the ball and the robot. 
+However, I ran into many errors due to my mistakes while wiring the sensors, and I had to first map out the circuit in Fritzing, and double check where each wire is leading to. 
+I eventually got the sensors to work, and my base project was finished. 
+Next, I will be adding modifications to my robot such as a servomotor for turning the camera, adding keyboard controls(WASD) to the program, and designing a 3D-printed case for the robot in CAD. 
+
+## Final ball tracking code 
+
+```python 
+from flask import Flask, Response, render_template_string
+from picamera2 import Picamera2 
+from gpiozero import Motor, DistanceSensor 
+import cv2 
+import numpy as np 
+
+c_ultrasonic = DistanceSensor(echo = 17, trigger = 4) 
+l_ultrasonic = DistanceSensor(echo = 27, trigger = 15) 
+r_ultrasonic = DistanceSensor(echo = 22, trigger = 14) 
+
+rmotor = Motor(18, 23) 
+lmotor = Motor(13,24) 
+basespeed = 0.3 
+
+kp = 0.00005 #proportionality constant 
+kd = 0.000025 #derivative constant 
+ki = 0 #integral constant 
+iError = 0 
+prevError = 0 
+
+def PID(T, C): 
+    global prevError 
+    global iError 
+    error = C - T 
+    dError = error - prevError 
+    prevError = error 
+    iError += error 
+    P = kp * error 
+    I = ki * iError 
+    D = kd * dError 
+    return P + I + D 
+
+
+app = Flask(__name__) 
+
+# Initialize PiCam
+picam2 = Picamera2()
+picam2.configure(picam2.create_preview_configuration(main={"format": "RGB888", "size": (640, 480)}))
+picam2.start()
+
+FRAME_WIDTH = 640
+CENTER_X = FRAME_WIDTH // 2
+
+def track_red_ball(frame):
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) 
+    lower_red1 = np.array([0, 100, 100]) 
+    upper_red1 = np.array([10, 255, 255])
+    lower_red2 = np.array([160, 100, 100])
+    upper_red2 = np.array([179, 255, 255])
+    
+    mask1 = cv2.inRange(hsv, lower_red1, upper_red1)
+    mask2 = cv2.inRange(hsv, lower_red2, upper_red2)
+    mask = cv2.bitwise_or(mask1, mask2)
+    
+    mask = cv2.erode(mask, None, iterations=2)
+    mask = cv2.dilate(mask, None, iterations=2)
+
+    contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+    if contours:
+        largest = max(contours, key=cv2.contourArea) 
+        M = cv2.moments(largest)
+        if M["m00"] > 0:
+            cx = int(M["m10"] / M["m00"]) 
+            cy = int(M["m01"] / M["m00"]) 
+            offset = cx - CENTER_X 
+            output = PID(cx, CENTER_X) 
+            if basespeed + output > 1: 
+                output = 1-basespeed 
+            if -basespeed + output < -1: 
+                output = basespeed - 1 
+
+            if abs(offset) < 20: 
+                if c_ultrasonic.distance < 0.1 or l_ultrasonic.distance < 0.15 or r_ultrasonic.distance < 0.15: 
+                    lmotor.stop() 
+                    rmotor.stop() 
+                    print("Ball Reached!") 
+                else: 
+                    lmotor.forward(speed = 0.5) 
+                    rmotor.forward(speed = 0.5) 
+            elif output > 0: 
+                rmotor.forward(speed = basespeed + output) 
+                lmotor.backward(speed = basespeed + output) 
+            else: 
+                lmotor.forward(speed = basespeed - output) 
+                rmotor.backward(speed = basespeed - output) 
+            
+
+            if abs(offset) < 30: 
+                position = "Centered" 
+            elif offset < 0: 
+                position = "Left" 
+            else: 
+                position = "Right" 
+
+            cv2.drawContours(frame, [largest], -1, (0, 255, 0), 2) 
+            cv2.circle(frame, (cx, cy), 5, (255,0,0), -1) 
+            cv2.putText(frame, f"Offset: {offset} ({position})", (cx, cy - 20), 
+            cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255,255,255), 2) 
+
+    return frame 
+
+def generate_frames():
+    while True:
+        frame = picam2.capture_array()
+        # frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
+        frame = track_red_ball(frame)
+        ret, buffer = cv2.imencode('.jpg', frame)
+        jpg_frame = buffer.tobytes()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n'
+               b'Content-Length: ' + f"{len(jpg_frame)}".encode() + b'\r\n\r\n' +
+               jpg_frame + b'\r\n')
+        
+@app.route('/')
+def index():
+    return render_template_string('''
+        <html>
+            <head><title>Red Ball Tracking Stream</title></head>
+            <body>
+                <h2>Live Tracking</h2>
+                <img src="/video_feed">
+            </body>
+        </html>
+    ''')
+
+@app.route('/video_feed')
+def video_feed():
+    return Response(generate_frames(),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000) 
+``` 
 
 ## Schematic for the 3 ultrasonic sensors 
 ![Schematic](schematic2.jpg) 
@@ -57,7 +201,7 @@ For my first milestone, I set up all the software parts of the base project, inc
 On the mechanical side, I connected one of the ultrasonic sensors through a breadboard, 2 DC motors, and a Pi camera to my Raspberry Pi using the provided dupont wires.  
 I got the motors to turn, print the distance detected by the ultrasonic sensor, and capture pictures through the Pi camera using the 3 programs listed below.  
 My biggest challenge so far was getting the camera to take a photo, because at first I got a Segmentation Fault error, which was was extremely unsual to happen in Python, as pointed out by my helpful and patient instructor, Daniel Lin.  
-After multiple attempts to uninstall and reinstall extensions, and reflashing thePi, I finally got the camera to take a photo.  
+After multiple attempts to uninstall and reinstall extensions, and reflashing the Pi, I finally got the camera to take a photo.  
 Daniel also provided me with some code that converts the red parts of the image to white and the rest to black.  
 The code is supposed to help distinguish the red ball from the rest of the environment. 
 I reached this milestone at the end of my 1st week, and next week, I hope to finish the base project.  
