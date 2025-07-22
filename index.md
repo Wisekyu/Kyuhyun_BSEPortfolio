@@ -38,9 +38,9 @@ For your final milestone, explain the outcome of your project. Key details to in
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 --> 
 
-For my second milestone, I completed the base project by attaching 2 more ultrasonic sensors in the front, sending a live video feed from my Pi camera to my computer, utilizing a prewritten program to detect the red ball, and using PID controls to 
+For my second milestone, I completed the base project by attaching 2 more ultrasonic sensors in the front, sending a live video feed from my Pi camera to my computer, utilizing a prewritten program to detect the red ball, and using PID controls to steer the robot towards the ball. 
 Although I was too ambitous and thought I could try coding the program for sphere recognition myself, Daniel recommended me that I use a premade program. 
-I tweaked the code for the live feed to show a dot that marks the center of the ball, an outline around the ball, the offset in a numberical form, and  if the ball is on the left or the right side, or centered from the view of the camera. 
+I tweaked the code for the live feed to show a dot that marks the center of the ball, an outline around the ball, the offset in a numerical form, and  if the ball is on the left or the right side, or centered from the view of the camera. 
 During class, I learned about PID(Proportional, Integral, Derivative) controls, which use 3 factors to steer the robot towards the direction of the ball. 
 My instructor, Daniel wrote out the pseudocode for the controller, which laid out the foundation for me to write the PID controller in Python. 
 The first iterations of the program did not work very well, as it simply made the robot turn left and right, but I found out that the robot was actually avoiding the red ball instead of facing it. 
