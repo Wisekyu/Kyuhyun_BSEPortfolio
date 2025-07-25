@@ -1,4 +1,4 @@
-## About Me 
+### About Me 
 
 ![image](my_photo.jpg) 
 
@@ -9,7 +9,7 @@ Hi, I'm Kyuhyun and I'm a rising sophomore at Leigh High School. Before starting
 
 # Ball Tracking Robot 
 
-My project is a ball tracking robot on 2 wheels controlled by a Raspberry Pi 4 that uses a Pi camera and ultrasonic sensors to take information from its surroundings, and relies a PID control program to 
+My project is a ball tracking robot on 2 wheels controlled by a Raspberry Pi 4 that SSHs to my computer. The robot is equipped with a Pi camera and 3 ultrasonic sensors to display a live feed & measure distance to the red ball, and utilizes a PID control program to steer itself toward the red ball. 
 
 <!--A self-driving robot controlled by a Raspberry Pi 4 on 3 wheels, and propelled by 2 motors. It uses a Pi camera to detect and steer towards the designated red ball, and uses 3 pairs of Adafruit ultrasonic sensors to detect the distance from the ball. 
 
