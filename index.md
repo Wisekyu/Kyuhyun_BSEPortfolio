@@ -1,11 +1,17 @@
+# About Me 
+
+Hi, I'm Kyuhyun and I'm a rising sophomre at Leigh High School. Before starting this project, I had limited hands-on engineering experience but had interest in making my own project. I picked this project because it consisted of similar amounts of the mechanical and software aspects of engineering. 
+
 
 **I introduce you to...** 
 
 # Ball Tracking Robot 
 
-A self-driving robot controlled by a Raspberry Pi 4 on 3 wheels, and propelled by 2 motors. It uses a Pi camera to detect and steer towards the designated red ball, and uses 3 pairs of Adafruit ultrasonic sensors to detect the distance from the ball. 
+My project is a ball tracking robot on 2 wheels controlled by a Raspberry Pi 4 that uses a Pi camera and ultrasonic sensors to take information from its surroundings, and relies a PID control program to 
 
-<!---Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails! 
+<!--A self-driving robot controlled by a Raspberry Pi 4 on 3 wheels, and propelled by 2 motors. It uses a Pi camera to detect and steer towards the designated red ball, and uses 3 pairs of Adafruit ultrasonic sensors to detect the distance from the ball. 
+
+Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!  
 
 You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions: --> 
 
@@ -19,7 +25,7 @@ You should comment out all portions of your portfolio that you have not complete
 
 <!-- 
 
-# Final Milestone
+# Final Milestone - Wrap-up 
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
@@ -29,7 +35,9 @@ For your final milestone, explain the outcome of your project. Key details to in
 - What you've accomplished since your previous milestone
 - What your biggest challenges and triumphs were at BSE
 - A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
+- What you hope to learn in the future after everything you've learned at BSE 
+
+
 
 
 --> 
