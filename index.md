@@ -1,6 +1,8 @@
 # About Me 
 
-Hi, I'm Kyuhyun and I'm a rising sophomre at Leigh High School. Before starting this project, I had limited hands-on engineering experience but had interest in making my own project. I picked this project because it consisted of similar amounts of the mechanical and software aspects of engineering. 
+![image](my_photo.jpg) 
+
+Hi, I'm Kyuhyun and I'm a rising sophomore at Leigh High School. Before starting this project, I had limited hands-on engineering experience but had interest in making my own project. I picked this project because it consisted of similar amounts of the mechanical and software aspects of engineering. 
 
 
 **I introduce you to...** 
