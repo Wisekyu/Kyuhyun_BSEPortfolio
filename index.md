@@ -2,14 +2,14 @@
 
 ![image](my_photo.jpg) 
 
-Hi, I'm Kyuhyun and I'm a rising sophomore at Leigh High School. Before starting this project, I had limited hands-on engineering experience but had interest in making my own project. I picked this project because it consisted of similar amounts of the mechanical and software aspects of engineering. 
+Hi, I'm Kyuhyun and I'm a rising sophomore at Leigh High School. Before starting this project, I had limited hands-on engineering experience but had an interest in building my own project. I picked this project because it consisted of similar amounts of mechanical and software aspects of engineering. 
 
 
 **I introduce you to...** 
 
 # Ball Tracking Robot 
 
-My project is a ball tracking robot on 2 wheels controlled by a Raspberry Pi 4 that SSHs to my computer. The robot is equipped with a Pi camera and 3 ultrasonic sensors to display a live feed & measure distance to the red ball, and utilizes a PID control program to steer itself toward the red ball. 
+My project is a ball tracking robot on 2 wheels controlled by a Raspberry Pi 4 that SSHs to my computer. The robot is equipped with a Pi camera and 3 ultrasonic sensors to display a live feed & measure distance to the red ball, and utilizes a PID control program to steer itself toward the red ball. The entire robot is powered by a power bank, and it moves using 2 wheels attached to 2 AC motors. 
 
 <!--A self-driving robot controlled by a Raspberry Pi 4 on 3 wheels, and propelled by 2 motors. It uses a Pi camera to detect and steer towards the designated red ball, and uses 3 pairs of Adafruit ultrasonic sensors to detect the distance from the ball. 
 
