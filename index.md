@@ -15,7 +15,7 @@ You should comment out all portions of your portfolio that you have not complete
 
 <!--**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.** -->
 
-<!--![](logo.svg) 
+![image](robot.jpg) 
   
 # Final Milestone
 
@@ -35,6 +35,8 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8J3m2el726Y?si=N-IOYyN9vgjUt5Ti" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+
+<br> 
 
 For my second milestone, I completed the base project by attaching 2 more ultrasonic sensors in the front, sending a live video feed from my Pi camera to my computer, utilizing a prewritten program to detect the red ball, and using PID controls to steer the robot towards the ball. 
 Although I was too ambitous and thought I could try coding the program for sphere recognition myself, Daniel recommended me that I use a premade program. 
