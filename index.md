@@ -25,10 +25,10 @@ You should comment out all portions of your portfolio that you have not complete
 
 ![image](robot.jpg) 
 
-<!-- 
+
 
 # Final Milestone - Wrap-up 
-
+<!-- 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -38,11 +38,17 @@ For your final milestone, explain the outcome of your project. Key details to in
 - What your biggest challenges and triumphs were at BSE
 - A summary of key topics you learned about
 - What you hope to learn in the future after everything you've learned at BSE 
-
-
-
-
 --> 
+
+
+My final milestone will mostly serve as a recap of everything I have accomplished as I was building this project, since there aren't as many additions compared to previous milestones. 
+As an additional component, I also installed and connected a set of servomotors that could pan the camera left and right, and angle it up or down, depending on where it is. The servomotor made it so that the robot could track the red ball no matter which direction it was facing from the robot. However, controlling the servomotor was not exactly a smooth process as the function library I used to program was in C, a language I am unfamiliar with. Thus, I had to figure out how to make a shared .so file from an .o file with the help of my instructor, which allowed me to use the functions in Python. 
+Although I took upon this project without much relevant knowledge and couldn't get as much as done as other more skilled students, I've gotten so much hands-on experience for building circuits using breadboards and resistors. Before starting this project, I did not even know what SSH meant, but now I have the knowledge required to make my own projects using Python. 
+One of the most useful concepts I've learned from coding my robot is PID control. Now I know how the control system behind many everyday devices such as robot vacuums, and self-driving vehicles. 
+For my first self-driven engineering project, I can proudly say that the final product exceeded my expectations. 
+With my newfound engineering experience, I know that I have what it takes to develop projects of my choice and modify them as I see fit. 
+
+
 # Second Milestone 
 
 
