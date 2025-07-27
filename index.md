@@ -40,7 +40,7 @@ For your final milestone, explain the outcome of your project. Key details to in
 - What you hope to learn in the future after everything you've learned at BSE 
 --> 
 
-<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;"><iframe src="https://www.youtube.com/embed/nqJw9iCZrxc?rel=0" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen scrolling="no" allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;"></iframe></div>
+<iframe src="https://www.youtube.com/embed/nqJw9iCZrxc?rel=0" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen scrolling="no" allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;"></iframe></div>
 
 My final milestone will mostly serve as a recap of everything I have accomplished as I was building this project, since there aren't as many additions compared to previous milestones. 
 As an additional component, I also installed and connected a set of servomotors that could pan the camera left and right, and angle it up or down, depending on where it is. The servomotor made it so that the robot could track the red ball no matter which direction it was facing from the robot. However, controlling the servomotor was not exactly a smooth process as the function library I used to program was in C, a language I am unfamiliar with. Thus, I had to figure out how to make a shared .so file from an .o file with the help of my instructor, which allowed me to use the functions in Python. 
