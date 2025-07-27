@@ -11,36 +11,22 @@ Hi, I'm Kyuhyun and I'm a rising sophomore at Leigh High School. Before starting
 
 My project is a ball tracking robot on 2 wheels controlled by a Raspberry Pi 4 that SSHs to my computer. The robot is equipped with a Pi camera and 3 ultrasonic sensors to display a live feed & measure distance to the red ball, and utilizes a PID control program to steer itself toward the red ball. The entire robot is powered by a power bank, and it moves using 2 wheels attached to 2 AC motors. 
 
-<!--A self-driving robot controlled by a Raspberry Pi 4 on 3 wheels, and propelled by 2 motors. It uses a Pi camera to detect and steer towards the designated red ball, and uses 3 pairs of Adafruit ultrasonic sensors to detect the distance from the ball. 
-
-Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!  
-
-You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions: --> 
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** | 
 |:--:|:--:|:--:|:--:|
 | Kyuhyun K | Leigh High School | Software Engineering | Incoming Sophomore 
 
-<!--**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.** -->
 
 ![image](robot.jpg) 
 
 
 
 # Final Milestone - Wrap-up 
-<!-- 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-For your final milestone, explain the outcome of your project. Key details to include are: 
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE 
---> 
 
 <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;"><iframe src="https://www.youtube.com/embed/nqJw9iCZrxc?rel=0" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen scrolling="no" allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;"></iframe></div>
+
+<br>
 
 My final milestone will mostly serve as a recap of everything I have accomplished as I was building this project, since there aren't as many additions compared to previous milestones. 
 As an additional component, I also installed and connected a set of servomotors that could pan the camera left and right, and angle it up or down, depending on where it is. The servomotor made it so that the robot could track the red ball no matter which direction it was facing from the robot. However, controlling the servomotor was not exactly a smooth process as the function library I used to program was in C, a language I am unfamiliar with. Thus, I had to figure out how to make a shared .so file from an .o file with the help of my instructor, which allowed me to use the functions in Python. 
